@@ -60,7 +60,6 @@ As of September 2022, I started refactoring the code to clean up the inconsisten
 Have restructured the system library objects, THis has moved them away from the traditional Amiga Exec structure, and making them closer in design to C++ objects, this has also alowed me to run the "User Space" on top of a Unix kernel (using a thin shim) and has made development/debugging much easier.
 
 When opening a library or device, all tasks receive an instance of that library with consists of a data structure which looks like this:
-
 ```
 struct library_t{
     node_t node;
@@ -73,5 +72,4 @@ struct library_t{
     int someData;
 }
 ```
-
 As a user you would generally only access the lib pointer which is in effect the vtable for the object.
